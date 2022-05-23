@@ -1,0 +1,33 @@
+{% include "shorty/partials/head.html" %}
+
+
+<body>
+    <main class="main-content-container">
+        <h2>SHORTY</h2>
+        <h3>Please, type the URL you want to short.</h3>
+        
+        <div class="url-form">
+            <form action="" method="POST">
+                <input type="text" name="url" placeholder="http://www.example.com" required>
+                <button type="submit" class="search-button"><i class="fas fa-link"></i></button>
+            </form>
+        </div>
+        <h3>Tools</h3>
+        <div class="tools">
+            <a href="">Source Code <i class="fab fa-github"></i></a>
+            
+            <a href="">Admin <i class="fas fa-users-cog"></i></a>
+            
+            <a href="">How it Works <i class="fas fa-question-circle"></i></a>
+        </div>
+
+        <div class="url-shortened">
+            <h3>Your shortened URL is:</h3>
+            <a href="">Link</a>
+        </div>
+    </main>
+</body>
+
+</html>
+
+{% comment %} {{ url_for('shorty.shorten') }} {% endcomment %}

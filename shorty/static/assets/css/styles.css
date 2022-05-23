@@ -1,0 +1,76 @@
+:root {
+  --dark-purple: #22223b;
+  --light-purple: #4a4e69;
+  --medium-purple: #9a8c98;
+  --dark-bege: #c9ada7;
+  --light-bege: #f2e9e4;
+}
+
+body {
+  background-color: var(--dark-purple);
+  font-family: "Roboto", sans-serif;
+}
+
+h2,
+h3 {
+  color: var(--light-bege);
+}
+
+.main-content-container {
+  background: #293241;
+  border-radius: 7px;
+  width: 40%;
+  display: block;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 2px 5px 25px 5px;
+}
+
+.url-form input {
+  border: 1px var(--dark-purple) solid;
+  border-radius: 3px;
+  padding: 10px;
+  width: 50%;
+  color: var(--light-bege);
+  background-color: var(--medium-purple);
+}
+
+.url-form button {
+  border: 1px var(--dark-purple) solid;
+  border-radius: 3px;
+  padding: 10px;
+  color: var(--light-bege);
+  background-color: var(--medium-purple);
+  transition: all 300ms ease-in-out;
+}
+
+.url-form button:hover {
+  cursor: pointer;
+  color: var(--dark-purple);
+  background-color: var(--dark-bege);
+}
+
+h4 {
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.tools {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-bege);
+  transition: all 300ms ease-in-out;
+}
+
+a:hover {
+  color: var(--medium-purple);
+}
