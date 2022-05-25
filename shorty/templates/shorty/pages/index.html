@@ -7,8 +7,10 @@
         <h3>Please, type the URL you want to short.</h3>
         
         <div class="url-form">
-            <form action="" method="POST">
-                <input type="text" name="url" placeholder="http://www.example.com" required>
+            <form action="" method="POST" class="form-control">
+                {% csrf_token %}
+                {% comment %} <input type="text" name="url" placeholder="http://www.example.com" required> {% endcomment %}
+                <div>{{form.url}}</div>
                 <button type="submit" class="search-button"><i class="fas fa-link"></i></button>
             </form>
         </div>
@@ -21,10 +23,14 @@
             <a href="">How it Works <i class="fas fa-question-circle"></i></a>
         </div>
 
+         {% if new_url %}
         <div class="url-shortened">
             <h3>Your shortened URL is:</h3>
-            <a href="">Link</a>
+            <a href="{{ new_url }}">{{ new_url }}</a>
+            <h3>Previous URL:</h3>
+            <a href="{{ long_url }}">{{ long_url }}</a>
         </div>
+        {% endif %}
     </main>
 </body>
 
