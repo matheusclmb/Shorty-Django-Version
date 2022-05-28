@@ -3,34 +3,42 @@
 
 <body>
     <main class="main-content-container">
-        <h2>SHORTY</h2>
-        <h3>Please, type the URL you want to short.</h3>
-        
-        <div class="url-form">
-            <form action="" method="POST" class="form-control">
-                {% csrf_token %}
-                {% comment %} <input type="text" name="url" placeholder="http://www.example.com" required> {% endcomment %}
-                <div>{{form.url}}</div>
-                <button type="submit" class="search-button"><i class="fas fa-link"></i></button>
-            </form>
+        <div class="title-wrapper">
+            <h1>SHORTY</h1>
         </div>
-        <h3>Tools</h3>
-        <div class="tools">
-            <a href="">Source Code <i class="fab fa-github"></i></a>
+        <div class="content-wrapper">
+            <h3>Please, type the URL you want to short.</h3>
             
-            <a href="">Admin <i class="fas fa-users-cog"></i></a>
-            
-            <a href="">How it Works <i class="fas fa-question-circle"></i></a>
-        </div>
+            <div class="url-form">
+                <form action="" method="POST" class="form-control">
+                    {% csrf_token %}
+                    {% comment %} <input type="text" name="url" placeholder="http://www.example.com" required> {% endcomment %}
+                    <div>{{form.url}} <button type="submit" class="search-button"><i class="fas fa-link"></i></button></div>
+                   
+                </form>
+            </div>
+            <h3>Tools</h3>
+            <div class="tools">
+                <a href="https://github.com/matheusclmb/Shorty-Django-Version" target="_blank">Source Code <i class="fab fa-github"></i></a>
+                
+                <a href="http://127.0.0.1:8000/admin/" target="_blank">Admin <i class="fas fa-users-cog"></i></a>
+                
+                <a href="">How it Works <i class="fas fa-question-circle"></i></a>
+            </div>
 
-         {% if new_url %}
-        <div class="url-shortened">
-            <h3>Your shortened URL is:</h3>
-            <a href="{{ new_url }}">{{ new_url }}</a>
-            <h3>Previous URL:</h3>
-            <a href="{{ long_url }}">{{ long_url }}</a>
+            {% if new_url %}
+            <div class="url-shortened">
+                <h3>Your shortened URL is:</h3>
+                <a href="{{ new_url }}">{{ new_url }}</a>
+                <h3>Previous URL:</h3>
+                <a href="{{ long_url }}">{{ long_url }}</a>
+            </div>
+            {% endif %}
+
+            <div class="author">
+                <a href="https://github.com/matheusclmb" target="_blank">by @CLMB</a>
+            </div>
         </div>
-        {% endif %}
     </main>
 </body>
 
