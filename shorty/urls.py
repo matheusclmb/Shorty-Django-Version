@@ -13,12 +13,12 @@ urlpatterns = [
     path("<str:shortened_path>", views.redirect_url_view, name="redirect"),
     path(
         "api/shorten/<str:shortcode>",
-        views.ShortenerViewSet.as_view({"get": "list"}),
+        views.ShortenerViewSet.as_view(),
         name="shortener",
     ),
     path(
         "api/stats/<str:shortcode>",
-        views.StatsViewSet.as_view({"get": "list"}),
+        views.StatsViewSet.as_view(),
         name="stats",
     ),
 ]

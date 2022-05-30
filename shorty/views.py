@@ -1,6 +1,10 @@
+from urllib import response
+
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import generics, serializers, status, viewsets
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from utils.shorty.form import ShortenerForm
 
 from shorty.models import Shortener
@@ -53,13 +57,30 @@ def redirect_url_view(request, shortened_path):
         raise Http404("Sorry this link does not exist")
 
 
-class ShortenerViewSet(viewsets.ModelViewSet):
-    queryset = Shortener.objects.all()
-    serializer_class = ShortenerSerializer
-    lookup_field = "shortcode"
+class ShortenerViewSet(APIView):
+    def get(self, request, shortcode, format=None):
+        if Shortener.objects.filter(shortcode=shortcode).exists():
+            values = {
+                "shortcode": shortcode,
+                "url": Shortener.objects.get(shortcode=shortcode).url,
+            }
+            return Response(values)
+        else:
+            return Response(status=status.HTTP_404_NOT_FOUND)
 
 
-class StatsViewSet(viewsets.ModelViewSet):
-    queryset = Shortener.objects.all()
-    serializer_class = StatsSerializer
-    lookup_field = "shortcode"
+class StatsViewSet(APIView):
+    def get(self, request, shortcode, format=None):
+        if Shortener.objects.filter(shortcode=shortcode).exists():
+            values = {
+                "lastSeenDate": Shortener.objects.get(shortcode=shortcode).lastSeenDate,
+                "redirectCount": Shortener.objects.get(
+                    shortcode=shortcode
+                ).redirectCount,
+                "startDate": Shortener.objects.get(shortcode=shortcode).startDate,
+                "shortcode": shortcode,
+                "url": Shortener.objects.get(shortcode=shortcode).url,
+            }
+            return Response(values)
+        else:
+            return Response(status=status.HTTP_404_NOT_FOUND)
