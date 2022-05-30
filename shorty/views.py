@@ -1,8 +1,10 @@
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from rest_framework import viewsets
 from utils.shorty.form import ShortenerForm
 
 from shorty.models import Shortener
+from shorty.serializers import ShortenerSerializer, StatsSerializer
 
 
 # Create your views here.
@@ -49,3 +51,15 @@ def redirect_url_view(request, shortened_path):
 
     except:
         raise Http404("Sorry this link does not exist")
+
+
+class ShortenerViewSet(viewsets.ModelViewSet):
+    queryset = Shortener.objects.all()
+    serializer_class = ShortenerSerializer
+    lookup_field = "shortcode"
+
+
+class StatsViewSet(viewsets.ModelViewSet):
+    queryset = Shortener.objects.all()
+    serializer_class = StatsSerializer
+    lookup_field = "shortcode"

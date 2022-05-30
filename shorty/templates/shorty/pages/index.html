@@ -23,15 +23,15 @@
                 
                 <a href="http://127.0.0.1:8000/admin/" target="_blank">Admin <i class="fas fa-users-cog"></i></a>
                 
-                <a href="">How it Works <i class="fas fa-question-circle"></i></a>
+                <a href="http://127.0.0.1:8000/api/shorten/" target="_blank">API <i class="fas fa-question-circle"></i></a>
             </div>
 
             {% if new_url %}
             <div class="url-shortened">
                 <h3>Your shortened URL is:</h3>
-                <a href="{{ new_url }}">{{ new_url }}</a>
+                <a href="{{ new_url }}" target="_blank">{{ new_url }}</a>
                 <h3>Previous URL:</h3>
-                <a href="{{ long_url }}">{{ long_url }}</a>
+                <a href="{{ long_url }}" target="_blank">{{ long_url }}</a>
             </div>
             {% endif %}
 
