@@ -73,11 +73,11 @@ class StatsViewSet(APIView):
     def get(self, request, shortcode, format=None):
         if Shortener.objects.filter(shortcode=shortcode).exists():
             values = {
+                "startDate": Shortener.objects.get(shortcode=shortcode).startDate,
                 "lastSeenDate": Shortener.objects.get(shortcode=shortcode).lastSeenDate,
                 "redirectCount": Shortener.objects.get(
                     shortcode=shortcode
                 ).redirectCount,
-                "startDate": Shortener.objects.get(shortcode=shortcode).startDate,
                 "shortcode": shortcode,
                 "url": Shortener.objects.get(shortcode=shortcode).url,
             }
