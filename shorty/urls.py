@@ -10,6 +10,7 @@ router.register(r"stats", views.StatsSerializer, basename="Shortener")
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("api/", views.api, name="api"),
     path("<str:shortened_path>", views.redirect_url_view, name="redirect"),
     path(
         "api/shorten/<str:shortcode>",

@@ -7,16 +7,34 @@
             <a href="/"><h1> SHORTY</h1></a>
         </div>
         <div class="content-wrapper">
-            <h3>Please, type the URL you want to short.</h3>
-            
-            <div class="url-form">
-                <form action="" method="POST" class="form-control">
-                    {% csrf_token %}
-                    {% comment %} <input type="text" name="url" placeholder="http://www.example.com" required> {% endcomment %}
-                    <div>{{form.url}} <button type="submit" class="search-button"><i class="fas fa-link"></i></button></div>
-                   
-                </form>
-            </div>
+            <div class="api-info">
+                <h4>api/shorten/(shortcode)</h4>
+                <p>Returns</p>
+                <Code>
+                    
+                    <div>
+                    {
+                    "url": "http://example.com",
+                    "shortcode": "example"
+                    }
+                    </div>
+                </Code>
+                <h4>api/stats/(shortcode)</h4>
+                <p>Returns</p>
+                <Code>
+                    
+                    <div>
+                   {
+                    "startDate": "YYYY-MM-DDTHH:MM:SS.511Z",
+                    "lastSeenDate": "YYYY-MM-DDTHH:MM:SS.511Z",
+                    "redirectCount": 1
+                    "url": "http://example.com",
+                    "shortcode": "example"
+                    }
+                </div>
+                </Code>
+                </div>
+
             <h3>Tools</h3>
             <div class="tools">
                 <a href="https://github.com/matheusclmb/Shorty-Django-Version" target="_blank">Source Code <i class="fab fa-github"></i></a>

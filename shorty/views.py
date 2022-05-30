@@ -1,8 +1,6 @@
-from urllib import response
-
-from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render
-from rest_framework import generics, serializers, status, viewsets
+from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from utils.shorty.form import ShortenerForm
@@ -84,3 +82,8 @@ class StatsViewSet(APIView):
             return Response(values)
         else:
             return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+def api(request):
+    template = "shorty/pages/api.html"
+    return render(request, template)

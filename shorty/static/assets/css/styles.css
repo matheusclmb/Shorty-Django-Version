@@ -144,3 +144,10 @@ a:hover {
     width: 100%;
   }
 }
+
+code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 10px;
+}
