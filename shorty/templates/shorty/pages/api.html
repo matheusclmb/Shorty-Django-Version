@@ -43,16 +43,6 @@
                 
                 <a href="/api/">API <i class="fas fa-question-circle"></i></a>
             </div>
-
-            {% if new_url %}
-            <div class="url-shortened">
-                <h3>Your shortened URL is:</h3>
-                <a href="{{ new_url }}" target="_blank">{{ new_url }}</a>
-                <h3>Previous URL:</h3>
-                <a href="{{ long_url }}" target="_blank">{{ long_url }}</a>
-            </div>
-            {% endif %}
-
             <div class="author">
                 <a href="https://github.com/matheusclmb" target="_blank">by @CLMB</a>
             </div>
