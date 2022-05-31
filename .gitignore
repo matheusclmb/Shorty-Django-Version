@@ -108,6 +108,7 @@ Control.system-ca-bundle
 GitHub.sublime-settings
 
 # Visual Studio Code #
+**/.vscode/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -121,6 +122,7 @@ __pycache__/
 __localcode
 venv
 env
+vscode
 .DS_Store
 local_settings.py
 _local_settings.py
