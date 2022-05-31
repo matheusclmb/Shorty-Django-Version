@@ -29,7 +29,7 @@
             {% if new_url %}
             <div class="url-shortened">
                 <h3>Your shortened URL is:</h3>
-                <a href="{{ new_url }}" target="_blank">{{ new_url }}</a>
+                <a href="{{ new_url }}" target="_blank" id="newurl">{{ new_url }}</a> <button onclick="copyToClipboard()"><i class="fa-regular fa-copy"></i></button>
                 <h3>Previous URL:</h3>
                 <a href="{{ long_url }}" target="_blank">{{ long_url }}</a>
             </div>
