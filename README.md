@@ -39,12 +39,12 @@ $ python3 shorty/tests.py
 
 #### Return the original URL and the shortcode.
 
-```http
+```
   GET /api/shorten/${shortcode}
 ```
 
 
-```json
+```
 200 OK
 Content-Type: "application/json"
 
@@ -56,12 +56,12 @@ Content-Type: "application/json"
 
 #### Return the stats of the shortcode
 
-```http
+```
   GET /api/stats/${shortcode}
 ```
 
 
-```json
+```
 200 OK
 Content-Type: "application/json"
 
