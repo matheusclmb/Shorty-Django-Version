@@ -3,7 +3,7 @@ from rest_framework import routers
 
 from . import views
 
-appname = "shortener"
+appname = "shorty"
 router = routers.DefaultRouter()
 router.register(r"shortener", views.ShortenerViewSet, basename="Shortener")
 router.register(r"stats", views.StatsSerializer, basename="Shortener")
