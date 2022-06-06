@@ -1,4 +1,3 @@
-
 # Shorty - URL Shortener w/ Django & DRF
 
 Basic Web App using Django for front/back-end and Django Rest Framework to implement API and APIView.
@@ -6,43 +5,49 @@ Basic Web App using Django for front/back-end and Django Rest Framework to imple
 ## Setup
 
 Clone
+
 ```bash
 git clone https://github.com/matheusclmb/Shorty-Django-Version.git
 ```
+
 Create VENV
+
 ```bash
 $ python3 -m venv env
 $ source env/bin/activate
 ```
 
 Install Requirements
+
 ```bash
 $ pip install -r requirements.txt
 ```
 
 Run Server
+
 ```bash
 $ python3 manage.py runserver
 ```
 
 ## Tests
+
 Run all tests:
+
 ```bash
-$ python3 shorty/tests.py
+$ python manage.py test
 ```
+
 ## Documentação da API
 
-| Parameter   | Type       | Description                                   |
-| :---------- | :--------- | :------------------------------------------ |
-| `shortcode`      | `string` | **Required**. Shortcode of a shortened URL. |
-
+| Parameter   | Type     | Description                                 |
+| :---------- | :------- | :------------------------------------------ |
+| `shortcode` | `string` | **Required**. Shortcode of a shortened URL. |
 
 #### Return the original URL and the shortcode.
 
 ```
   GET /api/shorten/${shortcode}
 ```
-
 
 ```
 200 OK
@@ -59,7 +64,6 @@ Content-Type: "application/json"
 ```
   GET /api/stats/${shortcode}
 ```
-
 
 ```
 200 OK
