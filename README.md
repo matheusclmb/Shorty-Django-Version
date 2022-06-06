@@ -37,7 +37,7 @@ Run all tests:
 $ python manage.py test
 ```
 
-## Documentação da API
+## API Documentation
 
 | Parameter   | Type     | Description                                 |
 | :---------- | :------- | :------------------------------------------ |
