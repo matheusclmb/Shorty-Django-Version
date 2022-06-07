@@ -37,16 +37,15 @@ Run all tests:
 $ python manage.py test
 ```
 
-<<<<<<< HEAD
+
 #### OBS:
 
 This project have tests using Selenium Library, in order to use you need to have Geckodriver in the project folder or in `env/bin`.
 If you are running to problems make sure you have Firefox installed and the exact PATH on Selenium function `driver = webdriver.Firefox(executable_path="/user/your/path/to/geckodriver")`
 
-## Documentação da API
-=======
+
 ## API Documentation
->>>>>>> f459310db4adda6dc22c5312981e8285f05f1cc7
+
 
 | Parameter   | Type     | Description                                 |
 | :---------- | :------- | :------------------------------------------ |
